@@ -1,0 +1,10 @@
+{
+  "name": "linkme",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Wehner <daniel.wehner@erdfisch.de>",
+    "Pascal Crott <pascal.crott@erdfisch.de>"
+  ],
+  "description": "Contains the linkme library.",
+  "license": "MIT"
+}
