@@ -64,12 +64,13 @@ var LINKME_LINK_TYPE_FORM = 2;
       this.$row_wrapper.hover(jQuery.proxy(this.hoverRowWrapper, this), jQuery.proxy(this.unhoverRowWrapper, this));
 
       var $element = this.$row_wrapper.find(url_or_selectors);
-      if ($element.length > 0) {
-        this.$link_element = $element;
-        this.link_url_type = LINKME_LINK_TYPE_A;
-        this.$row_wrapper.attr('title', this.$link_element.attr('title'));
-        this.$row_wrapper.find('a').bind('click', jQuery.proxy(this.linkDirectClickHandler, this));
+      if ($element.length == 0) {
+        $element = this.$wrapper.find(url_or_selectors);
       }
+      this.$link_element = $element;
+      this.link_url_type = LINKME_LINK_TYPE_A;
+      this.$row_wrapper.attr('title', this.$link_element.attr('title'));
+      this.$row_wrapper.find('a').bind('click', jQuery.proxy(this.linkDirectClickHandler, this));
       this.$row_wrapper.bind('click', jQuery.proxy(this.clickLinkHandler, this));
     }
     // It's an url
